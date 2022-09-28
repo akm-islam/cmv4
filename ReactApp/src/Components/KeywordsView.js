@@ -19,7 +19,6 @@ class App extends Component {
         keywords.map(keyword=>{
             this.props.topic_data.map(item=>{
                 if(item["cleaned_tweet"].split(" ").includes(keyword)){
-                    //console.log(item)
                     if(item["label"]=="Expert"){
                         keyword_count[keyword]["Expert"]=keyword_count[keyword]["Expert"]+1
                     }
@@ -29,6 +28,7 @@ class App extends Component {
                 }
             })    
         })
+
         var data=Object.entries(keyword_count)
         var keyword_svg_width=(window.innerWidth-25)/10,keyword_svg_height=60
         var w=keyword_svg_width-5,h=25
