@@ -43,7 +43,7 @@ class App extends Component {
                         {Topic_groupedData.map((item, i) => <div item style={{ height: 150, marginTop: 5, marginRight: topicview_margin_right, display: "inline-block" }}><TopicView topic_view_width={topic_view_width} topic_view_height={topic_view_height} topic={item.key} myid={"topic" + i} Topic_groupedData={Topic_groupedData} d1={item}> </TopicView></div>)}
                     </div>
                 </Grid>
-                {this.props.keywords_data != null ? <Grid item style={{height:keywords_view_height}}><KeywordsView></KeywordsView></Grid> : null}
+               
                 {this.props.keywords_data != null ? <Grid item style={{ width:window.innerWidth, height: window.innerHeight-(select_month_height+topic_view_container_height+keywords_view_height+20), border: "3px solid rgb(163, 163, 163,0.5)",margin:10,overflow:"scroll"}}><MatrixView></MatrixView></Grid> : null}
             </Grid>
         );

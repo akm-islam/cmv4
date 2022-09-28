@@ -57,9 +57,9 @@ class App extends Component {
             .attr("add_keywords", function (d, i) {
                 var cell_color = self.props.color[d['label']]
                 if (i == 0) {
-                    d3.select(this).selectAll(".mysvg").data(keywords).join("svg").attr("x", (d, i) => (rect_width * 2) + (rect_width * i)).attr("y",-20).attr("width", rect_width).attr("height", 20)
+                    d3.select(this).selectAll(".mysvg").data(keywords).join("svg").attr("x", (d, i) => (rect_width * 2) + (rect_width * i)).attr("y",-25).attr("width", rect_width).attr("height", 20)
                     .attr("add_text",function(keyword){
-                        d3.select(this).selectAll(".keyword_Text").data([keyword]).join("text").attr("x", 5).attr("y", 10).attr("class", "keyword_Text").attr('dominant-baseline', "middle").attr("fill", "#1c1c1c").style("text-transform", "capitalize").attr("font-size", 14).text(d)
+                        d3.select(this).selectAll(".keyword_Text").data([keyword]).join("text").attr("x", 5).attr("y", 10).attr("class", "keyword_Text").attr('dominant-baseline', "middle").attr("fill", "#1c1c1c").style("text-transform", "capitalize").attr("font-size", 14).text(keyword)
                     })
                     .attr("add_bars",function(keyword){
                         console.log(keyword_count[keyword])
