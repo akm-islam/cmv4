@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.slider text {
+  fill: white;
+  display: none;
+}
+
+circle {
+  fill-opacity: 1;
+}
+
+.lasso path {
+  stroke: rgb(80,80,80);
+  stroke-width:2px;
+}
+
+.lasso .drawn {
+  fill-opacity:.05 ;
+}
+
+.lasso .loop_close {
+  fill:none;
+  stroke-dasharray: 4,4;
+}
+
+.lasso .origin {
+  fill:#3399FF;
+  fill-opacity:.5;
+}
+
+.not_possible {
+  fill: rgb(200,200,200);
+}
+
+.possible {
+  fill: #EC888C;
+}
+
+.selected {
+  fill: rgb(102, 102, 102);
+}
+
+div.tooltip2 {
+  position: absolute;
+  text-align: center;
+  
+  padding: 5px;
+  font: 12px sans-serif;
+  color: white;
+  background: rgb(51, 51, 51);
+  border: 0px;
+  border-radius: 3px;
+  pointer-events: none
+}

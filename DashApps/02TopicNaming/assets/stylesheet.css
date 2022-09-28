@@ -1,0 +1,7 @@
+#parent1{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 200px 200px 50px 50px auto;
+    margin-bottom: 20px;
+
+}

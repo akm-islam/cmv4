@@ -1,0 +1,4 @@
+*.log
+node_modules/
+./project/node_modules/
+./npmtest/node_modules/
