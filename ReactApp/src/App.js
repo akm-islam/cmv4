@@ -8,6 +8,7 @@ import Months from "./Components/Months"
 import TopicView from './Components/TopicView';
 import KeywordsView from './Components/KeywordsView';
 import MatrixView from './Components/MatrixView';
+import MyTable from './Components/MyTable'
 
 import "./App.css"
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
         var Topic_groupedData = d3.nest().key((d) => d['topic_name']).entries(this.props.original_data).sort((a, b) => b['values'].length - a['values'].length)
         var select_month_height = 56
         var topic_view_container_width = window.innerWidth,topic_view_container_height=100+20 // topic_view_container_height is controls the height of each topic card
-        var keywords_view_height=100
+        var keywords_view_height=0
         var topic_view_width = 263, topic_view_height = topic_view_container_height-20, topicview_margin_right = 8
         return (
             <Grid container direction="row" justifyContent="center" alignItems="center" style={{ width: window.innerWidth }}>
@@ -43,8 +44,8 @@ class App extends Component {
                         {Topic_groupedData.map((item, i) => <div item style={{ height: 150, marginTop: 5, marginRight: topicview_margin_right, display: "inline-block" }}><TopicView topic_view_width={topic_view_width} topic_view_height={topic_view_height} topic={item.key} myid={"topic" + i} Topic_groupedData={Topic_groupedData} d1={item}> </TopicView></div>)}
                     </div>
                 </Grid>
-               
                 {this.props.keywords_data != null ? <Grid item style={{ width:window.innerWidth, height: window.innerHeight-(select_month_height+topic_view_container_height+keywords_view_height+20), border: "3px solid rgb(163, 163, 163,0.5)",margin:10,overflow:"scroll"}}><MatrixView></MatrixView></Grid> : null}
+            <MyTable selected_group_data={this.props.selected_group_data}></MyTable>
             </Grid>
         );
     }
@@ -56,7 +57,7 @@ const maptstateToprop = (state) => {
         default_month: state.default_month,
         keywords_data: state.keywords_data,
         selected_topic: state.selected_topic,
-        
+        selected_group_data:state.selected_group_data
     }
 }
 const mapdispatchToprop = (dispatch) => {

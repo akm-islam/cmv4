@@ -5,9 +5,17 @@ let initialState = {
    selected_topic_number:"0",
    keywords_data:null,
    topic_data:null,
-   color : { "Expert": "rgb(31, 120, 180,0.8)", "Non Expert": "rgb(253, 191, 111,0.8)" }
+   color : { "Expert": "rgb(31, 120, 180,0.8)", "Non Expert": "rgb(253, 191, 111,0.8)" },
+   removed_keywords:[],
+   selected_group_data:[]
 };
 const reducer = (state = initialState, action) => {
+   if (action.type === "selected_group_data") {
+      return { ...state, selected_group_data: action.value }
+   }
+   if (action.type === "removed_keywords") {
+      return { ...state, removed_keywords: action.value }
+   }
    if (action.type === "topic_data") {
       return { ...state, topic_data: action.value }
    }
@@ -15,7 +23,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, keywords_data: action.value }
    }
    if (action.type === "selected_topic_number") {
-      return { ...state, selected_topic_number: action.value }
+      return { ...state, selected_topic_number: action.value,removed_keywords:[] }
    }
    if (action.type === "selected_topic") {
       return { ...state, selected_topic: action.value }
