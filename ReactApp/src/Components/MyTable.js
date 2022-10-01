@@ -4,16 +4,16 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Popper from '@mui/material/Popper';
+import Popover from '@mui/material/Popover';
 
 export default function BasicTable(props) {
   return (
-<Popper id={"id"} open={true}>
+<Popover id={"id"} open={props.table_open} onClose={()=>props.Set_table_open(false)}>
     <div style={{'backgroundColor':"white"}}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Tweet</TableCell>
+            <TableCell>Tweets</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -27,6 +27,6 @@ export default function BasicTable(props) {
         </TableBody>
       </Table>
       </div>
-    </Popper>
+    </Popover>
   );
 }

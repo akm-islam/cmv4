@@ -7,11 +7,15 @@ let initialState = {
    topic_data:null,
    color : { "Expert": "rgb(31, 120, 180,0.8)", "Non Expert": "rgb(253, 191, 111,0.8)" },
    removed_keywords:[],
-   selected_group_data:[]
+   selected_group_data:[],
+   table_open:false,
 };
 const reducer = (state = initialState, action) => {
+   if (action.type === "table_open") {
+      return { ...state, table_open: action.value }
+   }
    if (action.type === "selected_group_data") {
-      return { ...state, selected_group_data: action.value }
+      return { ...state, selected_group_data: action.value,table_open:true }
    }
    if (action.type === "removed_keywords") {
       return { ...state, removed_keywords: action.value }

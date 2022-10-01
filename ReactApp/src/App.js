@@ -45,7 +45,7 @@ class App extends Component {
                     </div>
                 </Grid>
                 {this.props.keywords_data != null ? <Grid item style={{ width:window.innerWidth, height: window.innerHeight-(select_month_height+topic_view_container_height+keywords_view_height+20), border: "3px solid rgb(163, 163, 163,0.5)",margin:10,overflow:"scroll"}}><MatrixView></MatrixView></Grid> : null}
-            <MyTable selected_group_data={this.props.selected_group_data}></MyTable>
+            <MyTable selected_group_data={this.props.selected_group_data} table_open={this.props.table_open} Set_table_open={this.props.Set_table_open}></MyTable>
             </Grid>
         );
     }
@@ -57,7 +57,8 @@ const maptstateToprop = (state) => {
         default_month: state.default_month,
         keywords_data: state.keywords_data,
         selected_topic: state.selected_topic,
-        selected_group_data:state.selected_group_data
+        selected_group_data:state.selected_group_data,
+        table_open:state.table_open
     }
 }
 const mapdispatchToprop = (dispatch) => {
@@ -67,6 +68,7 @@ const mapdispatchToprop = (dispatch) => {
         Set_selected_topic_number: (val) => dispatch({ type: "selected_topic_number", value: val }),
         Set_selected_topic: (val) => dispatch({ type: "selected_topic", value: val }),
         Set_topic_data: (val) => dispatch({ type: "topic_data", value: val }),
+        Set_table_open: (val) => dispatch({ type: "table_open", value: val }),
     }
 }
 export default connect(maptstateToprop, mapdispatchToprop)(App);

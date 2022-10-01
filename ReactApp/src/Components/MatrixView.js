@@ -55,7 +55,6 @@ class App extends Component {
             })
             .attr("add_subjectivityscore", function (d, i) {
                 if (i == 0) { d3.select(this).selectAll(".subText").data([0]).join("text").attr("x", cell_width + cell_width / 2).attr('text-anchor', 'middle').attr("class", "subText").attr('dominant-baseline', "middle").attr("y", -15).text('Subjectivity').attr("fill", "#1c1c1c").attr("font-size", 14) }
-
                 d3.select(this).selectAll(".subjectivityscore_border_rect").data([0]).join('rect').attr("class", "subjectivityscore_border_rect").attr("width", cell_width - cell_gap_x).attr("height", cell_height - cell_gap_y).style("stroke", stroke_color).style("fill", "none").style("stroke-width", stroke_width).attr("x", cell_width)
                 d3.select(this).selectAll(".subjectivityscore_rect").data([0]).join('rect').attr("class", "subjectivityscore_rect").attr("width", sub_scale(parseFloat(d["subjective_prob"]))).attr("height", cell_height - cell_gap_y).style("fill", cell_color).attr("x", cell_width)
             })
@@ -80,6 +79,7 @@ class App extends Component {
                 }
                 d3.select(this).selectAll(".keywords_border_rect").data(keywords).join('rect').attr("class", "keywords_border_rect").attr("width", cell_width - cell_gap_x).attr("height", cell_height - cell_gap_y).style("stroke", stroke_color).attr("x", (d, i) => (cell_width * 2) + (cell_width * i)).style("stroke-width", stroke_width)
                     .style("fill", keyword => d["cleaned_tweet"].split(" ").includes(keyword) ? cell_color : "white").on('contextmenu',a=>{
+                        d3.event.preventDefault()
                         var data_by_group=my_data.filter(item=>item['group']==d['group'])
                         self.props.Set_selected_group_data(data_by_group)
                     })
