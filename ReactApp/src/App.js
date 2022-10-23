@@ -4,9 +4,8 @@ import * as d3 from 'd3';
 import { connect } from "react-redux";
 import March from "./Data/csv/March.csv";
 import MarchKeywords from "./Data/02keywords/March.json";
-import Months from "./Components/Months"
+import MonthsRadio from "./Components/MonthsRadio"
 import TopicView from './Components/TopicView';
-import KeywordsView from './Components/KeywordsView';
 import MatrixView from './Components/MatrixView';
 import MyTable from './Components/MyTable'
 
@@ -37,7 +36,7 @@ class App extends Component {
         return (
             <Grid container direction="row" justifyContent="center" alignItems="center" style={{ width: window.innerWidth }}>
                 <Grid style={{ height: select_month_height, width: "100%" }}>
-                    <Months default_month={this.props.default_month} Set_original_data={this.props.Set_original_data} Set_keywords_data={this.props.Set_keywords_data}></Months>
+                    <MonthsRadio default_month={this.props.default_month} Set_original_data={this.props.Set_original_data} Set_keywords_data={this.props.Set_keywords_data}></MonthsRadio>
                 </Grid>
                 <Grid className='topic_view_container' style={{ marginTop: 0, overflow: "scroll", height: topic_view_container_height, width: topic_view_container_width, padding: 0 }}>
                     <div className="scrolable_topic" style={{ width: Topic_groupedData.length * (topic_view_width + topicview_margin_right), height: 160 }}>
