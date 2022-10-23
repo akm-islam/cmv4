@@ -2,7 +2,6 @@ import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Popover from '@mui/material/Popover';
 import { CSVLink, CSVDownload } from 'react-csv';
@@ -15,6 +14,9 @@ export default function BasicTable(props) {
         <Grid item xs={9} sx={{paddingLeft:0,marginLeft:-3}}><p style={{margin:0,padding:0,fontSize:20,fontWeight:600}}>Tweets</p></Grid>
         <Grid item><CSVLink data={props.selected_group_data} >Export</CSVLink></Grid>
       </Grid>
+      
+      
+      
       <Table sx={{ maxWidth: 650 }} aria-label="simple table">
         <TableBody>
           {props.selected_group_data.map((row) => (
@@ -26,6 +28,9 @@ export default function BasicTable(props) {
           ))}
         </TableBody>
       </Table>
+
+
+
     </Popover>
   );
 }
