@@ -13,7 +13,7 @@ export default function BasicTable(props) {
   var sorted_data = props.selected_group_data.sort((a, b) => a.SentimentScore - b.SentimentScore)
   return (
     <Popover id={"id"} open={props.table_open} onClose={() => props.Set_table_open(false)}>
-      <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" style={{ width: window.innerWidth, height: window.innerHeight * .8 }}>
+      <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" style={{ width: window.innerWidth, height: window.innerHeight }}>
 
         <Grid className="Graph1" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={8} style={{ height: 250 }}>
           <Grid item xs={2} className="histChart">
