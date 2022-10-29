@@ -39,7 +39,7 @@ export default function BasicTable(props) {
             />
           </Grid>
         </Grid>
-        <Grid className="Graph2" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={12} style={{ height: 350,overflow:"scroll" }}>
+        <Grid className="Graph2" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={12} style={{ height: 500,overflow:"scroll" }}>
           <Table sx={{ maxWidth: window.innerWidth*.9 }} aria-label="simple table">
             <TableBody>
               {props.selected_group_data.map((row) => (
