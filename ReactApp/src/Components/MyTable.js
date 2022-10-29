@@ -10,11 +10,11 @@ import Grid from '@mui/material/Grid';
 
 export default function BasicTable(props) {
   console.log(props.selected_group_data, "selected_group_data")
-var sorted_data=props.selected_group_data.sort((a,b)=>a.SentimentScore-b.SentimentScore)
+  var sorted_data = props.selected_group_data.sort((a, b) => a.SentimentScore - b.SentimentScore)
   return (
     <Popover id={"id"} open={props.table_open} onClose={() => props.Set_table_open(false)}>
       <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" style={{ width: window.innerWidth, height: window.innerHeight * .8 }}>
-        
+
         <Grid className="Graph1" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={8} style={{ height: 250 }}>
           <Grid item xs={2} className="histChart">
             <Plot
@@ -24,23 +24,34 @@ var sorted_data=props.selected_group_data.sort((a,b)=>a.SentimentScore-b.Sentime
                   type: 'histogram',
                 },
               ]}
-              layout={{ width: "30%", height: 240, title: 'Sentiment',xaxis: {range: [-1, 1]}}}
+              layout={{ width: "30%", height: 240, title: 'Sentiment', xaxis: { range: [-1, 1] } }}
             />
           </Grid>
           <Grid item xs={2} className="barChart">
-          <Plot
+            <Plot
               data={[
                 {
                   x: props.selected_group_data.map(item => item["subjective_prob"]).sort((a, b) => a - b),
                   type: 'histogram',
                 },
               ]}
-              layout={{ width: "30%", height: 240, title: 'Subjectivity',xaxis: {range: [0, 1]}}}
+              layout={{ width: "30%", height: 240, title: 'Subjectivity', xaxis: { range: [0, 1] } }}
             />
           </Grid>
         </Grid>
-
-
+        <Grid className="Graph2" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={12} style={{ height: 350,overflow:"scroll" }}>
+          <Table sx={{ maxWidth: window.innerWidth*.9 }} aria-label="simple table">
+            <TableBody>
+              {props.selected_group_data.map((row) => (
+                <TableRow key={row.raw_tweet} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                  <TableCell component="th" scope="row">
+                    {row.raw_tweet}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Grid>
 
 
         {/*<Grid className="Graph2" container direction="column" justifyContent="flex-start" alignItems="flex-start" xs={12} style={{ height: 250 }}>
@@ -93,7 +104,7 @@ var sorted_data=props.selected_group_data.sort((a,b)=>a.SentimentScore-b.Sentime
             />
           </Grid>
         </Grid>*/}
-        
+
       </Grid>
     </Popover>
   );
