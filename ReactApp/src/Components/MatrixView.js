@@ -72,7 +72,6 @@ class App extends Component {
                         var x_pos=d3.select(this).select(".keyword_Text").node().getBBox()['width']+10
                         d3.select(this).selectAll(".bar1").data([0]).join('rect').attr('x',x_pos).attr('y',rect_h - y_scale(keyword_count[keyword]['Expert'])).attr("class", "bar1").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Expert'])).style("fill", self.props.color['Expert'])
                         d3.select(this).selectAll(".bar2").data([0]).join('rect').attr('x',x_pos+rect_w+2).attr('y',rect_h - y_scale(keyword_count[keyword]['Non Expert'])).attr("class", "bar2").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Non Expert'])).style("fill", self.props.color["Non Expert"])
-                        
                         d3.select(this).selectAll(".c_button").data([0]).join("text").attr("class","fa c_button").attr('x',cell_width-20).attr('y',14).text("\uf410").attr('font-size',13).attr('cursor','pointer')
                         .on('click',()=>self.props.Set_removed_keywords([keyword,...self.props.removed_keywords]))
                     })
@@ -83,6 +82,8 @@ class App extends Component {
                         var data_by_group=my_data.filter(item=>item['group']==d['group'])
                         self.props.Set_selected_group_data(data_by_group)
                     })
+                d3.select(this).selectAll(".myText").data([0]).join("text").attr("x", (d, i) => (cell_width/2+cell_width * 2) + (cell_width * i)).attr("class", "myText").attr('text-anchor','middle').attr('dominant-baseline',"middle").attr("y",6).text(d['group']).attr("fill","black").attr("font-size",8)
+                    
             })
     }
     render() {
