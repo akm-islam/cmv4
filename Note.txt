@@ -1,4 +1,4 @@
-Three classes has thresholds -26 and 26
-so -100 to -26 is negative
+Three classes:
+-100 to -26 is negative
 -25.999 to 25.999 is neutral
-and 26 to 100 is positive
+26 to 100 is positive
