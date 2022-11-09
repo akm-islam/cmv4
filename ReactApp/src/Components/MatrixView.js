@@ -81,6 +81,7 @@ class App extends Component {
                         d3.event.preventDefault()
                         var data_by_group=my_data.filter(item=>item['group']==d['group'])
                         self.props.Set_selected_group_data(data_by_group)
+                        self.props.Set_selected_group(d['group'])
                     })
                 d3.select(this).selectAll(".myText").data([0]).join("text").attr("x", (d, i) => (cell_width/2+cell_width * 2) + (cell_width * i)).attr("class", "myText").attr('text-anchor','middle').attr('dominant-baseline',"middle").attr("y",6).text(d['group']).attr("fill","black").attr("font-size",8)
                     
@@ -109,6 +110,7 @@ const mapdispatchToprop = (dispatch) => {
         Set_month_wise_data: (val) => dispatch({ type: "month_wise_data", value: val }),
         Set_removed_keywords: (val) => dispatch({ type: "removed_keywords", value: val }),
         Set_selected_group_data: (val) => dispatch({ type: "selected_group_data", value: val }),
+        Set_selected_group: (val) => dispatch({ type: "selected_group", value: val }),
     }
 }
 export default connect(maptstateToprop, mapdispatchToprop)(App);

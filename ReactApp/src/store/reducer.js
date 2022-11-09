@@ -9,10 +9,18 @@ let initialState = {
    removed_keywords:[],
    selected_group_data:[],
    table_open:false,
+   selected_month:"March",
+   selected_group:"",
 };
 const reducer = (state = initialState, action) => {
+   if (action.type === "selected_month") {
+      return { ...state, selected_month: action.value }
+   }
    if (action.type === "table_open") {
       return { ...state, table_open: action.value }
+   }
+   if (action.type === "selected_group") {
+      return { ...state, selected_group: action.value}
    }
    if (action.type === "selected_group_data") {
       return { ...state, selected_group_data: action.value,table_open:true }

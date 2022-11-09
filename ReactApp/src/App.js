@@ -36,7 +36,7 @@ class App extends Component {
         return (
             <Grid container direction="row" justifyContent="center" alignItems="center" style={{ width: window.innerWidth }}>
                 <Grid style={{ height: select_month_height, width: "100%" }}>
-                    <MonthsRadio default_month={this.props.default_month} Set_original_data={this.props.Set_original_data} Set_keywords_data={this.props.Set_keywords_data}></MonthsRadio>
+                    <MonthsRadio default_month={this.props.default_month} Set_original_data={this.props.Set_original_data} Set_keywords_data={this.props.Set_keywords_data} Set_selected_month={this.props.Set_selected_month}></MonthsRadio>
                 </Grid>
                 <Grid className='topic_view_container' style={{ marginTop: 0, overflow: "scroll", height: topic_view_container_height, width: topic_view_container_width, padding: 0 }}>
                     <div className="scrolable_topic" style={{ width: Topic_groupedData.length * (topic_view_width + topicview_margin_right), height: 160 }}>
@@ -44,7 +44,7 @@ class App extends Component {
                     </div>
                 </Grid>
                 {this.props.keywords_data != null ? <Grid item style={{ width:window.innerWidth, height: window.innerHeight-(select_month_height+topic_view_container_height+keywords_view_height+20), border: "3px solid rgb(163, 163, 163,0.5)",margin:10,overflow:"scroll"}}><MatrixView></MatrixView></Grid> : null}
-            <MyTable selected_group_data={this.props.selected_group_data} table_open={this.props.table_open} Set_table_open={this.props.Set_table_open}></MyTable>
+            <MyTable selected_group={this.props.selected_group} selected_month={this.props.selected_month} selected_group_data={this.props.selected_group_data} table_open={this.props.table_open} Set_table_open={this.props.Set_table_open}></MyTable>
             </Grid>
         );
     }
@@ -57,7 +57,10 @@ const maptstateToprop = (state) => {
         keywords_data: state.keywords_data,
         selected_topic: state.selected_topic,
         selected_group_data:state.selected_group_data,
-        table_open:state.table_open
+        table_open:state.table_open,
+        selected_month:state.selected_month,
+        selected_group:state.selected_group
+
     }
 }
 const mapdispatchToprop = (dispatch) => {
@@ -68,6 +71,8 @@ const mapdispatchToprop = (dispatch) => {
         Set_selected_topic: (val) => dispatch({ type: "selected_topic", value: val }),
         Set_topic_data: (val) => dispatch({ type: "topic_data", value: val }),
         Set_table_open: (val) => dispatch({ type: "table_open", value: val }),
+        Set_table_open: (val) => dispatch({ type: "table_open", value: val }),
+        Set_selected_month: (val) => dispatch({ type: "selected_month", value: val }),
     }
 }
 export default connect(maptstateToprop, mapdispatchToprop)(App);

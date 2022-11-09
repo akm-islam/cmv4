@@ -28,18 +28,20 @@ export default function FormControlLabelPosition(props) {
                         if(item=="March"){
                             filename=March
                             props.Set_keywords_data(MarchKeywords)
+                            props.Set_selected_month("March")
                         }
                         else if(item=="April"){
                             filename=April
                             props.Set_keywords_data(AprilKeywords)
+                            props.Set_selected_month("April")
                         }
                         else if(item=="May"){
                             filename=May
                             props.Set_keywords_data(MayKeywords)
+                            props.Set_selected_month("May")
                         }
                         d3.csv(filename).then(original_data => {
                             props.Set_original_data(original_data)
-                            console.log(original_data)
                         })
                         props.set_selcted_month(item)
                     }}/>} label={item} labelPlacement="end" />)}
