@@ -22,7 +22,19 @@ export default function BasicTable(props) {
         </Grid>
       </Grid>
       <div>{props.selected_group_data.map(row=> <p>{row.raw_tweet}</p>)}</div>
-     
+      {/*
+      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
+        <TableBody>
+          {props.selected_group_data.map((row) => (
+            <TableRow key={row.raw_tweet} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row">
+                {row.raw_tweet}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+          */}
     </Popover>
   );
 }
