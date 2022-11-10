@@ -21,6 +21,8 @@ export default function BasicTable(props) {
           </a>
         </Grid>
       </Grid>
+      <div>{props.selected_group_data.map(row=> <p>{row.raw_tweet}</p>)}</div>
+      {/*
       <Table sx={{ maxWidth: 650 }} aria-label="simple table">
         <TableBody>
           {props.selected_group_data.map((row) => (
@@ -32,6 +34,7 @@ export default function BasicTable(props) {
           ))}
         </TableBody>
       </Table>
+          */}
     </Popover>
   );
 }
