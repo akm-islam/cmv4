@@ -44,7 +44,7 @@ class App extends Component {
                     </div>
                 </Grid>
                 {this.props.keywords_data != null ? <Grid item style={{ width:window.innerWidth, height: window.innerHeight-(select_month_height+topic_view_container_height+keywords_view_height+20), border: "3px solid rgb(163, 163, 163,0.5)",margin:10,overflow:"scroll"}}><MatrixView></MatrixView></Grid> : null}
-            <MyTable selected_group={this.props.selected_group} selected_month={this.props.selected_month} selected_group_data={this.props.selected_group_data} table_open={this.props.table_open} Set_table_open={this.props.Set_table_open}></MyTable>
+            {this.props.selected_group.length>0?<MyTable selected_group={this.props.selected_group} selected_month={this.props.selected_month} selected_group_data={this.props.selected_group_data} table_open={this.props.table_open} Set_table_open={this.props.Set_table_open}></MyTable>:null}
             </Grid>
         );
     }
