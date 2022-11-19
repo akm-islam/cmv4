@@ -20,6 +20,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, table_open: action.value }
    }
    if (action.type === "selected_group") {
+      console.log("selected_group",action.value)
       return { ...state, selected_group: action.value}
    }
    if (action.type === "selected_group_data") {
