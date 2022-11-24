@@ -29,6 +29,13 @@ object-assign
  * Date: 2021-03-02T17:08Z
  */
 
+/*!***************************************************
+* mark.js v8.11.1
+* https://markjs.io/
+* Copyright (c) 2014–2018, Julian Kühnel
+* Released under the MIT license https://git.io/vwTVl
+*****************************************************/
+
 /** @license MUI v5.4.4
  *
  * This source code is licensed under the MIT license found in the
