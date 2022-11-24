@@ -17,7 +17,6 @@
     "d3-lasso": "git+https://git@github.com/skokenes/d3-lasso.git",
     "d3-simple-slider": "^1.10.4",
     "jquery": "^3.4.1",
-    "mark.js": "^8.11.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -50,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "mark.js": "^8.11.1"
   }
 }
