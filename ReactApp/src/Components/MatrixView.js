@@ -43,7 +43,7 @@ class App extends Component {
         //.sort((a, b) => b["SentimentScore"] - a["SentimentScore"])
 
         console.log(my_data,"topic_data")
-        d3.select(".matrix_view_container").attr("width", cell_width * 12).selectAll(".item").data(my_data).join("g").attr("class", "item").attr("transform", (d, i) => "translate(0," + (30 + i * cell_height) + ")").attr("group",d=>d['group'])
+        d3.select(".matrix_view_container").attr("width", (cell_width * 12) - 100).selectAll(".item").data(my_data).join("g").attr("class", "item").attr("transform", (d, i) => "translate(0," + (140 + i * cell_height) + ")").attr("group",d=>d['group'])
             .attr("add_sentimentscore", function (d, i) {
                 if (i == 0) { d3.select(this).selectAll(".sentText").data([0]).join("text").attr("x", cell_width / 2).attr('text-anchor', 'middle').attr("class", "sentText").attr('dominant-baseline', "middle").attr("y", -15).text('Sentiment').attr("fill", "#1c1c1c").attr("font-size", 14) }
                 d3.select(this).selectAll(".sentimentscore_border_rect").data([0]).join('rect').attr("class", "sentimentscore_border_rect").attr("width", cell_width - cell_gap_x).attr("height", cell_height - cell_gap_y).style("stroke", stroke_color).style("fill", "none").style("stroke-width", stroke_width)
@@ -59,31 +59,33 @@ class App extends Component {
                 d3.select(this).selectAll(".subjectivityscore_rect").data([0]).join('rect').attr("class", "subjectivityscore_rect").attr("width", sub_scale(parseFloat(d["subjective_prob"]))).attr("height", cell_height - cell_gap_y).style("fill", cell_color).attr("x", cell_width)
             })
             .attr("add_keywords", function (d, i) {
+                var reduce_size = 125;
                 var cell_color = self.props.color[d['label']]
                 if (i == 0) {
                     var rect_w=10,rect_h=14
                     var just_count=[...Object.values(keyword_count).map(item=>item['Expert']),...Object.values(keyword_count).map(item=>item['Non Expert'])]
                     var y_scale=d3.scaleLinear().domain(d3.extent(just_count)).range([1,rect_h])
-                    d3.select(this).selectAll(".mysvg").data(keywords).join("svg").attr('class','mysvg').attr("x", (d, i) => (cell_width * 2) + (cell_width * i)).attr("y",-25).attr("width", cell_width).attr("height", 20)
+                    d3.select(this).selectAll(".mysvg").data(keywords).join("svg").attr('class','mysvg').attr("x", (d, i) => (cell_width * 2) + ((cell_width - reduce_size) * i)).attr("y",-110).attr("width", cell_width).attr("height", 200)
                     .attr("add_text",function(keyword){
-                        d3.select(this).selectAll(".keyword_Text").data([keyword]).join("text").attr("x", 5).attr("y", 10).attr("class", "keyword_Text").attr('dominant-baseline', "middle").attr("fill", "#1c1c1c").style("text-transform", "capitalize").attr("font-size", 14).text(keyword)
+                        d3.select(this).selectAll(".keyword_Text").data([keyword]).join("text").attr("x", 0).attr("y", 9).attr("transform", "translate(0, 100) rotate(270)").attr("class", "keyword_Text").attr('dominant-baseline', "middle").attr("fill", "#1c1c1c").style("text-transform", "capitalize").attr("font-size", 14).text(keyword)
                     })
                     .attr("add_bars",function(keyword){
                         var x_pos=d3.select(this).select(".keyword_Text").node().getBBox()['width']+10
-                        d3.select(this).selectAll(".bar1").data([0]).join('rect').attr('x',x_pos).attr('y',rect_h - y_scale(keyword_count[keyword]['Expert'])).attr("class", "bar1").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Expert'])).style("fill", self.props.color['Expert'])
-                        d3.select(this).selectAll(".bar2").data([0]).join('rect').attr('x',x_pos+rect_w+2).attr('y',rect_h - y_scale(keyword_count[keyword]['Non Expert'])).attr("class", "bar2").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Non Expert'])).style("fill", self.props.color["Non Expert"])
-                        d3.select(this).selectAll(".c_button").data([0]).join("text").attr("class","fa c_button").attr('x',cell_width-20).attr('y',14).text("\uf410").attr('font-size',13).attr('cursor','pointer')
+                        var y_pos = d3.select(this).select(".keyword_Text").node().getBBox()['width']+5
+                        // d3.select(this).selectAll(".bar1").data([0]).join('rect').attr('x',x_pos).attr('y',rect_h - y_scale(keyword_count[keyword]['Expert'])).attr("class", "bar1").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Expert'])).style("fill", self.props.color['Expert'])
+                        // d3.select(this).selectAll(".bar2").data([0]).join('rect').attr('x',x_pos+rect_w+2).attr('y',rect_h - y_scale(keyword_count[keyword]['Non Expert'])).attr("class", "bar2").attr("width", rect_w).attr("height", y_scale(keyword_count[keyword]['Non Expert'])).style("fill", self.props.color["Non Expert"])
+                        d3.select(this).selectAll(".c_button").data([0]).join("text").attr("class","fa c_button").attr('x',cell_width - reduce_size-20).attr('y',100-y_pos).text("\uf410").attr('font-size',10).attr('cursor','pointer')
                         .on('click',()=>self.props.Set_removed_keywords([keyword,...self.props.removed_keywords]))
                     })
                 }
-                d3.select(this).selectAll(".keywords_border_rect").data(keywords).join('rect').attr("class", "keywords_border_rect").attr("width", cell_width - cell_gap_x).attr("height", cell_height - cell_gap_y).style("stroke", stroke_color).attr("x", (d, i) => (cell_width * 2) + (cell_width * i)).style("stroke-width", stroke_width)
+                d3.select(this).selectAll(".keywords_border_rect").data(keywords).join('rect').attr("class", "keywords_border_rect").attr("width", cell_width - cell_gap_x - reduce_size).attr("height", cell_height - cell_gap_y).style("stroke", stroke_color).attr("x", (d, i) => (cell_width * 2) + ((cell_width - reduce_size) * i)).style("stroke-width", stroke_width)
                     .style("fill", keyword => d["cleaned_tweet"].split(" ").includes(keyword) ? cell_color : "white").on('contextmenu',a=>{
                         d3.event.preventDefault()
                         var data_by_group=my_data.filter(item=>item['group']==d['group'])
                         self.props.Set_selected_group_data(data_by_group)
                         self.props.Set_selected_group(d['group'])
                     })
-                d3.select(this).selectAll(".myText").data([0]).join("text").attr("x", (d, i) => (cell_width/2+cell_width * 2) + (cell_width * i)).attr("class", "myText").attr('text-anchor','middle').attr('dominant-baseline',"middle").attr("y",6).text(d['group']).attr("fill","black").attr("font-size",8)
+                d3.select(this).selectAll(".myText").data([0]).join("text").attr("x", (d, i) => (9 + cell_width * 2 + cell_width * i)).attr("class", "myText").attr('text-anchor','middle').attr('dominant-baseline',"middle").attr("y",6).text(d['group']).attr("fill","black").attr("font-size",5)
                     
             })
     }
