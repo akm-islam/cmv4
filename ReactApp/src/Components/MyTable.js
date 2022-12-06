@@ -36,10 +36,10 @@ class BasicTable extends Component {
           </Grid>
           <Grid id="Tableparent">
             {this.props.selected_group_data.map(row => <Grid container direction="row" style={{ border: "1px solid #cccccc", padding: "0px 10px" }}>
-              <grid item xs={6} style={{ width: "80%", marginBottom: 10 }}>{row.raw_tweet}</grid>
+              <grid item xs={6} style={{ width: "80%", marginBottom: 10 }}>{row.readable_tweet}</grid>
               <grid item xs={4} style={{ marginLeft: 10 }}><TextField id="standard-basic" label="" variant="standard" onChange={(event) => {
                 var temp = this.props.selected_group_data.map(item => {
-                  if (item.raw_tweet == row.raw_tweet) {
+                  if (item.readable_tweet == row.readable_tweet) {
                     item['tweet_label'] = event.target.value
                   }
                   return item
