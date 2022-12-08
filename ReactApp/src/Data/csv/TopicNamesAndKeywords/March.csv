@@ -1,17 +1,17 @@
-Topic Number,Topic Name,keywords
--1,Other,"['people', 'health', 'test', 'time', 'need', 'case', 'get', 'work', 'take', 'go']"
-0,Spread of Virus,"['virus', 'spread', 'viral', 'humidity', 'get', 'people', 'transmission', 'stop', 'say', 'new']"
-1,Case Statistics,"['case', 'death', 'total', 'confirm', 'new', 'report', 'rate', 'dead', 'toll', 'mortality']"
-2,Mask Wearing,"['mask', 'wear', 'protective', 'face', 'equipment', 'worker', 'surgical', 'need', 'supply', 'hospital']"
-3,Mitigation Strategy,"['quarantine', 'self', 'city', 'home', 'day', 'isolation', 'time', 'get', 'need', 'exposure']"
-4,Crisis in Healthcare System,"['hospital', 'bed', 'nurse', 'doctor', 'surge', 'patient', 'need', 'care', 'capacity', 'elective']"
-5,Impact on Education,"['school', 'close', 'closure', 'order', 'student', 'shut', 'essential', 'due', 'business', 'teacher']"
-6,Undecided,"['food', 'restaurant', 'delivery', 'grocery', 'store', 'go', 'shopping', 'shelf', 'supermarket', 'buy']"
-7,Testing for Virus,"['lab', 'test', 'capacity', 'kit', 'sample', 'swab', 'diagnostic', 'reagent', 'supply', 'patient']"
-8,Proactive Measures (possibly),"['pandemic', 'preparedness', 'know', 'read', 'global', 'call', 'response', 'go', 'help', 'think']"
-9,Impact on travel,"['travel', 'flight', 'ban', 'border', 'student', 'close', 'airport', 'restriction', 'suspend', 'gathering']"
-10,Developing vaccine,"['vaccine', 'vaccination', 'trial', 'develop', 'absence', 'need', 'achieve', 'hypothetical', 'safe', 'amazing']"
-11,Undecided,"['hand', 'wash', 'water', 'soap', 'washing', 'shake', 'hygiene', 'safe', 'use', 'greet']"
-12,Test Result(possibly),"['positive', 'test', 'wife', 'minister', 'case', 'confirm', 'prime', 'health', 'person', 'people']"
-13,Infection Rate,"['flu', 'influenza', 'dispel', 'striking', 'comparison', 'deadly', 'contagious', 'notion', 'exist', 'immunity']"
-14,Symptom,"['cough', 'sneeze', 'droplet', 'fever', 'nose', 'symptom', 'thermometer', 'temperature', 'hand', 'air']"
+Topic Number,Topic Name,keywords,combined_topic_name
+-1,Other,"['people', 'health', 'test', 'time', 'need', 'case', 'get', 'work', 'take', 'go']",Other
+0,Spread of Virus,"['virus', 'spread', 'viral', 'humidity', 'get', 'people', 'transmission', 'stop', 'say', 'new']",Virus Spread
+1,Case Statistics,"['case', 'death', 'total', 'confirm', 'new', 'report', 'rate', 'dead', 'toll', 'mortality']",Virus Spread
+2,Mask Wearing,"['mask', 'wear', 'protective', 'face', 'equipment', 'worker', 'surgical', 'need', 'supply', 'hospital']",Response
+3,Mitigation Strategy,"['quarantine', 'self', 'city', 'home', 'day', 'isolation', 'time', 'get', 'need', 'exposure']",Response
+4,Crisis in Healthcare System,"['hospital', 'bed', 'nurse', 'doctor', 'surge', 'patient', 'need', 'care', 'capacity', 'elective']",Impact
+5,Impact on Education,"['school', 'close', 'closure', 'order', 'student', 'shut', 'essential', 'due', 'business', 'teacher']",Impact
+6,Undecided,"['food', 'restaurant', 'delivery', 'grocery', 'store', 'go', 'shopping', 'shelf', 'supermarket', 'buy']",Impact
+7,Testing for Virus,"['lab', 'test', 'capacity', 'kit', 'sample', 'swab', 'diagnostic', 'reagent', 'supply', 'patient']",Response
+8,Proactive Measures (possibly),"['pandemic', 'preparedness', 'know', 'read', 'global', 'call', 'response', 'go', 'help', 'think']",Response
+9,Impact on travel,"['travel', 'flight', 'ban', 'border', 'student', 'close', 'airport', 'restriction', 'suspend', 'gathering']",Impact
+10,Developing vaccine,"['vaccine', 'vaccination', 'trial', 'develop', 'absence', 'need', 'achieve', 'hypothetical', 'safe', 'amazing']",Response
+11,Undecided,"['hand', 'wash', 'water', 'soap', 'washing', 'shake', 'hygiene', 'safe', 'use', 'greet']",Response
+12,Test Result(possibly),"['positive', 'test', 'wife', 'minister', 'case', 'confirm', 'prime', 'health', 'person', 'people']",Response
+13,Infection Rate,"['flu', 'influenza', 'dispel', 'striking', 'comparison', 'deadly', 'contagious', 'notion', 'exist', 'immunity']",
+14,Symptom,"['cough', 'sneeze', 'droplet', 'fever', 'nose', 'symptom', 'thermometer', 'temperature', 'hand', 'air']",

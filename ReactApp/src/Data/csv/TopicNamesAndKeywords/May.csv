@@ -1,4 +1,4 @@
-Topic Number,Topic Name,keywords
+Topic Number,Topic Name,keywords,combined_topic_name
 -1,Other,"['test', 'people', 'need', 'get', 'work', 'time', 'case', 'new', 'go', 'make']"
 0,Global rise of Pandemic,"['pandemic', 'global', 'health', 'world', 'response', 'country', 'public', 'take', 'need', 'people']"
 1,Uncertain1,"['health', 'public', 'mental', 'join', 'challenge', 'emergency', 'interview', 'world', 'global', 'live']"

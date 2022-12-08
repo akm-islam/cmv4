@@ -1,17 +1,17 @@
-Topic Number,Topic Name,keywords
--1,Other,"['people', 'health', 'need', 'test', 'get', 'time', 'work', 'new', 'go', 'case']"
-0,Spread of Virus,"['case', 'positive', 'report', 'test', 'symptom', 'confirm', 'total', 'daily', 'identify', 'self']"
-1,Demand of Mask,"['mask', 'wear', 'face', 'surgical', 'use', 'make', 'glove', 'cloth', 'protect', 'worker']"
-2,Vaccine Development,"['vaccine', 'trial', 'vaccination', 'develop', 'need', 'development', 'make', 'work', 'drug', 'treatment']"
-3,Trial Result,"['drug', 'trial', 'treatment', 'use', 'study', 'clinical', 'chloroquine', 'patient', 'antiviral', 'promising']"
-4,Sanitation,"['hand', 'wash', 'water', 'soap', 'washing', 'handshake', 'alcohol', 'use', 'hygiene', 'shake']"
-5,Uncertain1,"['food', 'grocery', 'restaurant', 'delivery', 'meal', 'store', 'eat', 'go', 'deliver', 'local']"
-6,Uncertain2,"['pandemic', 'preparedness', 'response', 'world', 'global', 'organization', 'health', 'think', 'plan', 'need']"
-7,Mitigation Strategy,"['quarantine', 'self', 'home', 'day', 'city', 'isolation', 'people', 'time', 'need', 'measure']"
-8,Case Statistics,"['death', 'case', 'new', 'total', 'toll', 'confirm', 'report', 'dead', 'raise', 'number']"
-9,Uncertain3,"['deliver', 'sign', 'copy', 'official', 'support', 'senator', 'ill', 'act', 'stimulus', 'last']"
-10,Global Impact,"['china', 'graph', 'bird', 'world', 'death', 'case', 'pneumonia', 'communist', 'united', 'surpass']"
-11,Infection Rate,"['infection', 'rate', 'infect', 'death', 'fatality', 'case', 'mortality', 'people', 'number', 'estimate']"
-12,Crisis in Healthcare System,"['hospital', 'bed', 'patient', 'surge', 'capacity', 'elective', 'surgery', 'care', 'need', 'doctor']"
-13,Solidarity,"['donate', 'fund', 'donation', 'equipment', 'help', 'blood', 'protective', 'relief', 'charity', 'support']"
-14,Infection Rate by Race,"['black', 'racial', 'racism', 'disparity', 'white', 'race', 'ethnic', 'health', 'minority', 'community']"
+Topic Number,Topic Name,keywords,combined_topic_name
+-1,Other,"['people', 'health', 'need', 'test', 'get', 'time', 'work', 'new', 'go', 'case']",
+0,Spread of Virus,"['case', 'positive', 'report', 'test', 'symptom', 'confirm', 'total', 'daily', 'identify', 'self']",Virus Spread
+1,Demand of Mask,"['mask', 'wear', 'face', 'surgical', 'use', 'make', 'glove', 'cloth', 'protect', 'worker']",Response
+2,Vaccine Development,"['vaccine', 'trial', 'vaccination', 'develop', 'need', 'development', 'make', 'work', 'drug', 'treatment']",Response
+3,Trial Result,"['drug', 'trial', 'treatment', 'use', 'study', 'clinical', 'chloroquine', 'patient', 'antiviral', 'promising']",Response
+4,Sanitation,"['hand', 'wash', 'water', 'soap', 'washing', 'handshake', 'alcohol', 'use', 'hygiene', 'shake']",Response
+5,Uncertain1,"['food', 'grocery', 'restaurant', 'delivery', 'meal', 'store', 'eat', 'go', 'deliver', 'local']",Impact
+6,Uncertain2,"['pandemic', 'preparedness', 'response', 'world', 'global', 'organization', 'health', 'think', 'plan', 'need']",Response
+7,Mitigation Strategy,"['quarantine', 'self', 'home', 'day', 'city', 'isolation', 'people', 'time', 'need', 'measure']",Response
+8,Case Statistics,"['death', 'case', 'new', 'total', 'toll', 'confirm', 'report', 'dead', 'raise', 'number']",Virus Spread
+9,Uncertain3,"['deliver', 'sign', 'copy', 'official', 'support', 'senator', 'ill', 'act', 'stimulus', 'last']",Response
+10,Global Impact,"['china', 'graph', 'bird', 'world', 'death', 'case', 'pneumonia', 'communist', 'united', 'surpass']",Impact
+11,Infection Rate,"['infection', 'rate', 'infect', 'death', 'fatality', 'case', 'mortality', 'people', 'number', 'estimate']",Virus Spread
+12,Crisis in Healthcare System,"['hospital', 'bed', 'patient', 'surge', 'capacity', 'elective', 'surgery', 'care', 'need', 'doctor']",Impact
+13,Solidarity,"['donate', 'fund', 'donation', 'equipment', 'help', 'blood', 'protective', 'relief', 'charity', 'support']",Response
+14,Infection Rate by Race,"['black', 'racial', 'racism', 'disparity', 'white', 'race', 'ethnic', 'health', 'minority', 'community']",Virus Spread
